@@ -1,0 +1,10 @@
+body {
+    background:
+    url(../images/background.jpg),
+    url(../images/bg-biuer.jpg)
+    /* rgba(19, 52, 87, 0.87) */
+    ;
+    /* background-color: ; */
+    background-blend-mode: overlay;
+    
+}
