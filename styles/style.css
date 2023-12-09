@@ -4,10 +4,10 @@
     --font-t1: 600 40px/122.8% 'Montserrat', sans-serif;
     --font-t2: 600 18px/122.8% 'Montserrat', sans-serif;
     --font-t3: 400 14px/122.8% 'Montserrat', sans-serif;
-    --font-h1: 600 65px/135.3% 'Raleway', sans-serif;
+    --font-h1: 600 clamp(25px, 25px + 40 * (100vw - 320px)/1000, 65px)/135.3% 'Raleway', sans-serif;
     --font-h2: 600 55px/135.3% 'Raleway', sans-serif;
-    --font-t4: 400 18px/135.3% 'Raleway', sans-serif;
-    --font-t5: 400 16px/135.3% 'Raleway', sans-serif;
+    --font-t4: 400 clamp(10px, 10px + 8 * (100vw - 320px)/1000, 18px)/135.3% 'Raleway', sans-serif;
+    --font-t5: 400 clamp(11px, 11px + 5 * (100vw - 320px)/1000, 16px)/135.3% 'Raleway', sans-serif;
 }
 
 * {
@@ -44,6 +44,8 @@ h1 {
     font: var(--font-h1)
 }
 body {
+    position: relative;
+    display: grid;
     margin: 0;
     padding: 0 15px;
     background-color: rgba(19, 52, 87, 0.87);
@@ -51,6 +53,9 @@ body {
     background-size:  cover;
     background-position: center;
     background-repeat: no-repeat;    
+}
+main {
+    bottom: 0;
 }
 .container {
     position: relative;
@@ -60,40 +65,55 @@ body {
 }
 
 /* Направляющие фоновые полосы */
+.line-box {
+    display: flex;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    max-width: 1320px;
+    z-index: -100;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.inner-line-box {
+    width: 100%;
+    height: 100%;
+    max-width: clamp(98px, 98px + 352 * (100vw - 320px) / 1000, 450px);
+    z-index: -100;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: clamp(98px, 98px + 322 * (100vw - 320px) / 1000, 420px);
+}
+
 .bg-wrap {
     position: relative;
+    /* display: grid;
+    grid-template-rows: repeat(2, auto); */
     margin: auto;
     padding-top: clamp(20px, 20px + 10 * (100vw - 320px) / 1000, 30px);
+    padding-bottom: 40px;
     height: 100%;
+    width: 100%;
+    z-index: 10;
     max-height: 950px;
     max-width: 1320px;
 }
-.bg-wrap::before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100%;
-    width: 1px;
-    -webkit-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    -moz-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
+.line-box,
+.bg-wrap {
+    grid-area: 1/1;
 }
-.bg-wrap::after {
-    content: "";
+.bg-image {
     position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
     z-index: -1;
-    height: 100%;
-    width: 1px;
-    -webkit-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    -moz-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
+    right: -4.6%;
+    right: -37%;
+    /* height: 85%; */
+    width: clamp(39%, 85% + 46 * (100vw - 320px)/1000, 85%);
+    /* width: 91%; */
+    bottom: 3px;
 }
+
 
 
 
@@ -113,14 +133,25 @@ header {
 .menu a{
     font: var(--font-t3);
 }
+.icon-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: clamp(10px, 10px + 20 * (100vw - 320px) / 860, 30px);
+}
 .menu-tel {
     justify-self: right;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 205px;
+    gap: 15px;
+    max-width: 205px;
     font: var(--font-t2);
 }
+.menu-icon {
+    display: none;
+}
+
+
 
 .mp-content {
     max-width: 800px;
@@ -131,45 +162,21 @@ header {
     box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.61) inset;
 }
 .mp-content__text-box p {
-    margin-left: 24px;
+    /* margin-left: 24px; */
+    margin-left: clamp(6px, 6px + 18 * (100vw - 320px) / 1000, 24px);
     font: var(--font-t5);
     opacity: 0.5;
 }
 .mp-content__text-box span {
-    margin-left: 24px;
+    /* margin-left: 24px; */
+    margin-left: clamp(6px, 6px + 18 * (100vw - 320px) / 1000, 24px);
     font: var(--font-t1);
 }
 
 
-/* Направляющие фоновые полосы */
-.bg-lines {
-    position: absolute;
-    left: clamp(98px, 98px + 322 * (100vw - 320px) / 1000, 420px);
-}
-.bg-lines::before {
-    content: "";
-    position: fixed;
-    display: block;
-    top: 0;
-    z-index: -1;
-    width: clamp(98px, 98px + 352 * (100vw - 320px) / 1000, 450px);
-    height: 100%;
-    -webkit-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    -moz-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.08) inset;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-.bg-lines::after {
-    content: url(../images/mentor.png);
-    position: absolute;
-    height: clamp(432px, 432px + 376 * (100vh - 320px) / 1000, 808px);
-    bottom: 3px;
-    left: 464px;
-}
-
 
 /* -----------!!!------------ */
-.mp-content {
+/* .mp-content {
     margin-top: 18vh;
 }
 .mp-content h1 {
@@ -177,7 +184,7 @@ header {
 }
 .mp-content__btn {
     margin-top: 6vh;
-}
+} */
 
 
 
@@ -192,8 +199,9 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    height: 71px;
-    width: 380px;
+    height: clamp(30px, 30px + 41 * (100vw - 320px) / 1000, 71px);
+    width: clamp(126px, 126px + 254 * (100vw - 320px) / 1000, 380px);
+
 
 }
 .btn--opacity {
@@ -206,7 +214,7 @@ header {
     display: block;
     position: absolute;
     right: 0;
-    width: 72px;
+    width: clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
     height: 100%;
     border-left: 1px solid white;
 }
@@ -230,7 +238,8 @@ header {
     display: block;
     position: absolute;
     right: 0;
-    width: 72px;
+    /* width: 72px; */
+    width: clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
     height: 100%;
     border-left: 2px solid var(--dark-color1);
 }
@@ -257,4 +266,9 @@ header {
 }
 .mp-content__advantage {
     display: flex;
+}
+/* Класс, привязывающий блок к фоновой линии */
+.bg-lines {
+    position: absolute;
+    left: clamp(99px, 99px + 322 * (100vw - 320px) / 1000, 421px);
 }

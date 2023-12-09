@@ -1,0 +1,19 @@
+@media (max-width: 1180px) {
+      .menu {
+            display: none;
+      }
+      .menu-icon {
+            display: block;
+        }
+        .menu-tel p {
+            display: none;
+        }
+        .icon-box {
+
+        }
+}
+@media (max-width: 375px) {
+      .mp-content h1 {
+            max-width: 220px;
+      }
+}

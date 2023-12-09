@@ -12,9 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/media.css" />
+
 </head>
 
 <body>
+    <div class="line-box">
+        <div class="inner-line-box"></div>
+    </div>
     <div class="bg-wrap">
         <header class="container">
             <a class="logo" href=""><img src="images/logo.svg" alt=""></a>
@@ -28,10 +33,14 @@
                     <li><a href="">Контакты</a></li>
                 </ul>
             </nav>
-            <a href="tel:8-345-123-34-45" class="menu-tel">
-                <img src="images/icon-tel.svg" alt="">
-                <p>8-345-123-34-45</p>
-            </a>
+            <div class="icon-box">
+                <a href="" class="menu-icon"><img src="images/icon-menu.svg" alt=""></a>
+                <a href="tel:8-345-123-34-45" class="menu-tel">
+                    <img src="images/icon-tel.svg" alt="">
+                    <p>8-345-123-34-45</p>
+                </a>
+            </div>
+            
         </header>
 
         <main class="container">
@@ -60,9 +69,8 @@
                     </div>
                 </div>
             </div>
-            
         </main>
-
+        <img src="images/mentor.png"  class="bg-image" alt="">
     </div>
     
 </body>
