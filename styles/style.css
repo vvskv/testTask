@@ -1,7 +1,7 @@
 :root {
     --text-color: rgba(255, 255, 255, 1);
     --dark-color1: rgba(7, 48, 93, 1);
-    --font-t1: 600 40px/122.8% 'Montserrat', sans-serif;
+    --font-t1: 600 clamp(16px, 16px + 24 * (100vw - 320px)/1000, 40px)/122.8% 'Montserrat', sans-serif;
     --font-t2: 600 18px/122.8% 'Montserrat', sans-serif;
     --font-t3: 400 14px/122.8% 'Montserrat', sans-serif;
     --font-h1: 600 clamp(25px, 25px + 40 * (100vw - 320px)/1000, 65px)/135.3% 'Raleway', sans-serif;
@@ -55,13 +55,18 @@ body {
     background-repeat: no-repeat;    
 }
 main {
-    bottom: 0;
+    position: absolute;
+    bottom: 40px;
 }
 .container {
-    position: relative;
+    /* position: relative; */
     margin: auto;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.short-text {
+    display: none;
 }
 
 /* Направляющие фоновые полосы */
@@ -92,7 +97,7 @@ main {
     grid-template-rows: repeat(2, auto); */
     margin: auto;
     padding-top: clamp(20px, 20px + 10 * (100vw - 320px) / 1000, 30px);
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
     height: 100%;
     width: 100%;
     z-index: 10;
@@ -106,11 +111,8 @@ main {
 .bg-image {
     position: absolute;
     z-index: -1;
-    right: -4.6%;
-    right: -37%;
-    /* height: 85%; */
-    width: clamp(39%, 85% + 46 * (100vw - 320px)/1000, 85%);
-    /* width: 91%; */
+    left: clamp(126px, 126px + 758 * (100vw - 320px)/1000, 884px);
+    max-height: 85%;
     bottom: 3px;
 }
 
@@ -167,11 +169,7 @@ header {
     font: var(--font-t5);
     opacity: 0.5;
 }
-.mp-content__text-box span {
-    /* margin-left: 24px; */
-    margin-left: clamp(6px, 6px + 18 * (100vw - 320px) / 1000, 24px);
-    font: var(--font-t1);
-}
+
 
 
 
@@ -198,11 +196,11 @@ header {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     height: clamp(30px, 30px + 41 * (100vw - 320px) / 1000, 71px);
     width: clamp(126px, 126px + 254 * (100vw - 320px) / 1000, 380px);
-
-
+    width: clamp(98px, 98px + 210 * (100vw - 320px) / 1000, 308px);
 }
 .btn--opacity {
     -webkit-box-shadow: 0px 0px 0px 1px white inset;
@@ -213,25 +211,35 @@ header {
     content: "";
     display: block;
     position: absolute;
-    right: 0;
+    right: -clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
     width: clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
     height: 100%;
-    border-left: 1px solid white;
+    border: 1px solid white;
 }
 .btn--opacity::after {
-    content: url(../images/white-arrow.svg);
+    content: "";
+    display: block;
+    background-image: url(../images/white-arrow.svg);
+    background-size: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px) clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
+    width: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
+    height: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
     position: absolute;
-    right: 13px;
-    bottom: 13px;
+    right: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
+    bottom: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
 }
 .btn--white {
     background-color: white;
 }
 .btn--white::after {
-    content: url(../images/dark-arrow.svg);
+    content: "";
+    display: block;
+    background-image: url(../images/dark-arrow.svg);
+    background-size: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px) clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
+    width: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
+    height: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
     position: absolute;
-    right: 13px;
-    bottom: 13px;
+    right: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
+    bottom: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
 }
 .btn--white::before {
     content: "";
@@ -247,7 +255,7 @@ header {
     color: var(--dark-color1);
 }
 .btn span {
-    padding-left: 25px;
+    /* padding-left: 25px; */
     font: var(--font-t4);
 }
 
@@ -259,7 +267,8 @@ header {
     margin-top: 11vh;
 }
 .mp-content__advantage > .mp-content__text-box{
-    height: 135px;
+    /* height: 135px; */
+    height: clamp(35px, 35px + 100 * (100vw - 320px) / 1000, 135px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -267,6 +276,12 @@ header {
 .mp-content__advantage {
     display: flex;
 }
+.mp-content__advantage > .mp-content__text-box span {
+    margin-left: clamp(6px, 6px + 18 * (100vw - 320px) / 1000, 24px);
+    font: var(--font-t1);
+}
+
+
 /* Класс, привязывающий блок к фоновой линии */
 .bg-lines {
     position: absolute;

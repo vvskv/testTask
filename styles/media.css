@@ -8,9 +8,40 @@
         .menu-tel p {
             display: none;
         }
-        .icon-box {
-
+        .mp-content__btn > .btn > .long-text {
+            display: none;
         }
+        .mp-content__btn > .btn > .short-text {
+            display: block;
+        }
+}
+@media (max-width: 800px) {
+      .bg-image {
+            max-height: 80%;
+        }
+        
+}
+@media (max-width: 600px) {
+      .bg-image {
+            max-height: 76%;
+        }
+        
+}
+@media (max-width: 560px) {
+      .short-text {
+            display: block;
+      }
+      .long-text {
+            display: none;
+      }
+
+        
+}
+@media (max-width: 500px) {
+      .bg-image {
+            max-height: 71%;
+        }
+        
 }
 @media (max-width: 375px) {
       .mp-content h1 {

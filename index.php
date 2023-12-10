@@ -48,24 +48,31 @@
                 <h1>Создаю условия <br> для вашего успеха</h1>
 
                 <div class="mp-content__text-box">
-                    <p>Когда ваше время и энергия лучше сфокусированы, стремление к новым <br> возможностям становится реальностью, ваш успех зависит от ваших действий</p>
+                    <p class="long-text">Когда ваше время и энергия лучше сфокусированы, стремление к новым <br> возможностям становится реальностью, ваш успех зависит от ваших действий</p>
+                    <p class="short-text">Ваш успех зависит от ваших действий</p>
                 </div>
                 
                 <div class="mp-content__btn">
                     <a class="btn btn--white" href="">
-                        <span>Записаться на консультацию</span> </a>
+                        <span class="long-text">Записаться на консультацию</span>
+                        <span class="short-text">Записаться</span>
+                    </a>
                     <a class="btn btn--opacity" href="">
-                        <span> Бесплатная консультация</span></a>
+                        <span class="long-text">Бесплатная консультация</span>
+                        <span class="short-text">Заказать звонок</span>
+                    </a>
                 </div>
 
                 <div class="mp-content__advantage">
                     <div class="mp-content__text-box">
                         <span>130+</span>
-                        <p>техник для <br> достижения целей</p>
+                        <p class="long-text">техник для <br> достижения целей</p>
+                        <p class="short-text">техник</p>
                     </div>
                     <div class="mp-content__text-box bg-lines">
                         <span>250%</span>
-                        <p>увеличение личной <br> продуктивности</p>
+                        <p class="long-text">увеличение личной <br> продуктивности</p>
+                        <p class="short-text">продуктивности</p>
                     </div>
                 </div>
             </div>
