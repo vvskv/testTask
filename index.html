@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0"
+            />
+            <title>Document</title>
+
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+                  rel="preconnect"
+                  href="https://fonts.gstatic.com"
+                  crossorigin
+            />
+            <link
+                  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap"
+                  rel="stylesheet"
+            />
+
+            <link rel="stylesheet" href="styles/style.css" />
+            <link rel="stylesheet" href="styles/media.css" />
+      </head>
+
+      <body>
+            <div class="line-box">
+                  <div class="inner-line-box"></div>
+            </div>
+            <div class="bg-wrap">
+                  <div class="content-wrap">
+                        <header class="container">
+                              <a class="logo" href=""
+                                    ><img src="images/logo.svg" alt=""
+                              /></a>
+                              <nav>
+                                    <ul class="menu">
+                                          <li><a href="">Обо мне</a></li>
+                                          <li><a href="">Наставничество</a></li>
+                                          <li><a href="">Мероприятия</a></li>
+                                          <li><a href="">Кейсы</a></li>
+                                          <li><a href="">Отзывы</a></li>
+                                          <li><a href="">Контакты</a></li>
+                                    </ul>
+                              </nav>
+                              <div class="icon-box">
+                                    <a href="" class="menu-icon"
+                                          ><img
+                                                src="images/icon-menu.svg"
+                                                alt=""
+                                    /></a>
+                                    <a
+                                          href="tel:8-345-123-34-45"
+                                          class="menu-tel"
+                                    >
+                                          <img
+                                                src="images/icon-tel.svg"
+                                                alt=""
+                                          />
+                                          <p>8-345-123-34-45</p>
+                                    </a>
+                              </div>
+                        </header>
+
+                        <main class="container">
+                              <div class="mp-content">
+                                    <div class="mp-content__main">
+                                          <h1>
+                                                Создаю условия <br />
+                                                для вашего успеха
+                                          </h1>
+
+                                          <div class="mp-content__text-box">
+                                                <p class="long-text">
+                                                      Когда ваше время и энергия
+                                                      лучше сфокусированы,
+                                                      стремление к новым <br />
+                                                      возможностям становится
+                                                      реальностью, ваш успех
+                                                      зависит от ваших действий
+                                                </p>
+                                                <p class="short-text">
+                                                      Ваш успех зависит от ваших
+                                                      действий
+                                                </p>
+                                          </div>
+
+                                          <div class="mp-content__btn">
+                                                <a
+                                                      class="btn btn--white"
+                                                      href=""
+                                                >
+                                                      <div>
+                                                            <span
+                                                                  class="long-text"
+                                                                  >Записаться на
+                                                                  консультацию</span
+                                                            >
+                                                            <span
+                                                                  class="short-text"
+                                                                  >Записаться</span
+                                                            >
+                                                      </div>
+                                                </a>
+                                                <a
+                                                      class="btn btn--opacity"
+                                                      id="i-show-modal"
+                                                      href=""
+                                                >
+                                                      <div>
+                                                            <span
+                                                                  class="long-text"
+                                                                  >Бесплатная
+                                                                  консультация</span
+                                                            >
+                                                            <span
+                                                                  class="short-text"
+                                                                  >Заказать
+                                                                  звонок</span
+                                                            >
+                                                      </div>
+                                                </a>
+                                          </div>
+                                    </div>
+
+                                    <div class="mp-content__advantage">
+                                          <div class="mp-content__text-box">
+                                                <span>130+</span>
+                                                <p class="long-text">
+                                                      техник для <br />
+                                                      достижения целей
+                                                </p>
+                                                <p class="short-text">техник</p>
+                                          </div>
+                                          <div
+                                                class="mp-content__text-box bg-lines"
+                                          >
+                                                <span>250%</span>
+                                                <p class="long-text">
+                                                      увеличение личной <br />
+                                                      продуктивности
+                                                </p>
+                                                <p class="short-text">
+                                                      продуктивности
+                                                </p>
+                                          </div>
+                                    </div>
+                              </div>
+                        </main>
+                  </div>
+
+                  <img src="images/mentor.png" class="bg-image" alt="" />
+            </div>
+
+            <div class="modal" id="modal-call">
+                  <div class="modal__window" role="dialog" aria-modal="true">
+                        <!-- <div class="modal__content"> -->
+                        <a href="" class="modal__close"
+                              ><img src="images/icon-close.svg" alt=""
+                        /></a>
+
+                        <h2>
+                              Закажите <br />
+                              обратный звонок
+                        </h2>
+
+                        <form action="call.php" method="post">
+                              <input
+                                    class="input-text"
+                                    placeholder="Имя"
+                                    type="text"
+                                    name="name"
+                                    id="post-name"
+                                    required
+                              />
+                              <input
+                                    class="input-text"
+                                    placeholder="Телефон"
+                                    type="tel"
+                                    name="tel"
+                                    id="post-tel"
+                                    required
+                              />
+                              <input
+                                    class="input-checkbox"
+                                    type="checkbox"
+                                    name=""
+                                    id="agreement"
+                                    required
+                              />
+                              <label for="agreement"
+                                    >Согласен на сохранение и обработку
+                                    <br />
+                                    персональных данных</label
+                              >
+                              <button type="submit" class="btn btn--opacity">
+                                    <div>
+                                          <span>Заказать обратный звонок</span>
+                                    </div>
+                              </button>
+                        </form>
+                        <!-- </div> -->
+                  </div>
+            </div>
+            <!-- <div class="modal__shadow"></div> -->
+            <script src="scripts/app.js"></script>
+      </body>
+</html>

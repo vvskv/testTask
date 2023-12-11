@@ -8,10 +8,10 @@
         .menu-tel p {
             display: none;
         }
-        .mp-content__btn > .btn > .long-text {
+        .mp-content__btn > .btn > div >.long-text {
             display: none;
         }
-        .mp-content__btn > .btn > .short-text {
+        .mp-content__btn > .btn > div > .short-text {
             display: block;
         }
 }
@@ -24,6 +24,16 @@
 @media (max-width: 600px) {
       .bg-image {
             max-height: 76%;
+        }
+        .mp-content__btn {
+            flex-direction: column;
+            gap: 16px;
+        }
+        .btn--opacity::after {
+            background-image: url(../images/white-arrow-bold.svg);
+        }
+        .btn--white::after {
+            background-image: url(../images/dark-arrow-bold.svg);
         }
         
 }

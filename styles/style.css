@@ -2,10 +2,10 @@
     --text-color: rgba(255, 255, 255, 1);
     --dark-color1: rgba(7, 48, 93, 1);
     --font-t1: 600 clamp(16px, 16px + 24 * (100vw - 320px)/1000, 40px)/122.8% 'Montserrat', sans-serif;
-    --font-t2: 600 18px/122.8% 'Montserrat', sans-serif;
-    --font-t3: 400 14px/122.8% 'Montserrat', sans-serif;
+    --font-t2: 400 clamp(12px, 12px + 8 * (100vw - 320px)/1000, 20px)/122.8% 'Montserrat', sans-serif;
+    --font-t3: 400 clamp(12px, 12px + 4 * (100vw - 320px)/1000, 16px)/122.8% 'Montserrat', sans-serif;
     --font-h1: 600 clamp(25px, 25px + 40 * (100vw - 320px)/1000, 65px)/135.3% 'Raleway', sans-serif;
-    --font-h2: 600 55px/135.3% 'Raleway', sans-serif;
+    --font-h2: 600 clamp(20px, 20px + 30 * (100vw - 320px)/1000, 50px)/148.8% 'Raleway', sans-serif;
     --font-t4: 400 clamp(10px, 10px + 8 * (100vw - 320px)/1000, 18px)/135.3% 'Raleway', sans-serif;
     --font-t5: 400 clamp(11px, 11px + 5 * (100vw - 320px)/1000, 16px)/135.3% 'Raleway', sans-serif;
 }
@@ -28,6 +28,9 @@ ul {
 }
 a {
     text-decoration: none;
+}
+button {
+    border: none;
 }
 h1,
 h2,
@@ -55,12 +58,15 @@ body {
     background-repeat: no-repeat;    
 }
 main {
-    position: absolute;
-    bottom: 40px;
+    height: 100%;
+    /* position: absolute; */
+    /* bottom: 40px; */
 }
 .container {
+    width: 100%;
+    /* height: fit-content; */
     /* position: relative; */
-    margin: auto;
+    margin: 0 auto;
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -72,7 +78,7 @@ main {
 /* Направляющие фоновые полосы */
 .line-box {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     height: 100%;
     width: 100%;
     max-width: 1320px;
@@ -95,8 +101,8 @@ main {
     position: relative;
     /* display: grid;
     grid-template-rows: repeat(2, auto); */
-    margin: auto;
-    padding-top: clamp(20px, 20px + 10 * (100vw - 320px) / 1000, 30px);
+    margin: 0 auto;
+    /* padding-top: clamp(20px, 20px + 10 * (100vw - 320px) / 1000, 30px); */
     /* padding-bottom: 40px; */
     height: 100%;
     width: 100%;
@@ -114,6 +120,16 @@ main {
     left: clamp(126px, 126px + 758 * (100vw - 320px)/1000, 884px);
     max-height: 85%;
     bottom: 3px;
+}
+
+.content-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 65px;
+    padding-top: clamp(20px, 20px + 10 * (100vw - 320px) / 1000, 30px);
+    padding-bottom: 40px;
 }
 
 
@@ -146,7 +162,7 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
-    max-width: 205px;
+    /* max-width: 205px; */
     font: var(--font-t2);
 }
 .menu-icon {
@@ -156,7 +172,18 @@ header {
 
 
 .mp-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     max-width: 800px;
+}
+.mp-content__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10%;
+    height: 60%;
 }
 .mp-content__text-box {
     -webkit-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.61) inset;
@@ -190,31 +217,28 @@ header {
 .mp-content__btn {
     display: flex;
     gap: clamp(20px, 20px + 322 * (100vw - 320px) / 1000, 40px);
-    gap: 40px;
+    /* gap: 40px; */
 }
 .btn {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     height: clamp(30px, 30px + 41 * (100vw - 320px) / 1000, 71px);
     width: clamp(126px, 126px + 254 * (100vw - 320px) / 1000, 380px);
-    width: clamp(98px, 98px + 210 * (100vw - 320px) / 1000, 308px);
+}
+.btn div {
+    width: clamp(98px, 98px + 214 * (100vw - 320px) / 1000, 312px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn--opacity {
+    /* border: 1px solid white; */
     -webkit-box-shadow: 0px 0px 0px 1px white inset;
     -moz-box-shadow: 0px 0px 0px 1px white inset;
     box-shadow: 0px 0px 0px 1px white inset;
 }
-.btn--opacity::before {
-    content: "";
-    display: block;
-    position: absolute;
-    right: -clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
-    width: clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
-    height: 100%;
-    border: 1px solid white;
+.btn--opacity div {
+    border-right: 1px solid white;
 }
 .btn--opacity::after {
     content: "";
@@ -224,11 +248,15 @@ header {
     width: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
     height: clamp(8px, 8px + 12 * (100vw - 320px) / 1000, 20px);
     position: absolute;
-    right: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
     bottom: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
+    right: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
+
 }
 .btn--white {
     background-color: white;
+}
+.btn--white div {
+    border-right: 2px solid var(--dark-color1);
 }
 .btn--white::after {
     content: "";
@@ -240,16 +268,6 @@ header {
     position: absolute;
     right: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
     bottom: clamp(5px, 5px + 7 * (100vw - 320px) / 1000, 13px);
-}
-.btn--white::before {
-    content: "";
-    display: block;
-    position: absolute;
-    right: 0;
-    /* width: 72px; */
-    width: clamp(27px, 27px + 45 * (100vw - 320px) / 1000, 72px);
-    height: 100%;
-    border-left: 2px solid var(--dark-color1);
 }
 .btn--white span {
     color: var(--dark-color1);
@@ -264,7 +282,7 @@ header {
 
 
 .mp-content__advantage {
-    margin-top: 11vh;
+    /* margin-top: 11vh; */
 }
 .mp-content__advantage > .mp-content__text-box{
     /* height: 135px; */
@@ -287,3 +305,125 @@ header {
     position: absolute;
     left: clamp(99px, 99px + 322 * (100vw - 320px) / 1000, 421px);
 }
+
+
+
+
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /* right: 0; */
+    left: 0;
+    width: 100%;
+    max-width: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color:rgba(15, 29, 69, 0.6);
+    z-index: 99;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.modal--visible {
+    /* opacity: 0.6; */
+    /* display: block; */
+    max-width: 2000px;
+}
+.modal__window {
+    display: flex;
+    flex-direction: column;
+    gap: 9em;
+    position: absolute;
+    left: 0;
+    background: rgba(15, 29, 69, 1);
+    height: 100%;
+    width: 100%;
+    /* width: 100px; */
+    max-width: 0px;
+    /* max-width: 612px; */
+    padding-top: 90px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    opacity: 1;
+    -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.modal__window--visible{
+    padding-left: clamp(35px, 35px + 40 * (100vw - 320px) / 1000, 75px);
+    padding-right: clamp(35px, 35px + 15 * (100vw - 320px) / 1000, 50px);
+    /* width: 100%; */
+    max-width: 612px;
+}
+
+.modal__close {
+    position: absolute;
+    right: clamp(25px, 25px + 15 * (100vw - 320px) / 1000, 40px);
+    top: clamp(25px, 25px + 15 * (100vw - 320px) / 1000, 40px);
+    display: block;
+    width: fit-content;
+}
+.modal__close img {
+    width: clamp(20px, 20px + 10 * (100vw - 320px) / 1000, 30px);
+}
+
+.modal__window h2 {
+    font: var(--font-h2);
+}
+
+.modal__window>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+input[type=text], input[type=tel] {
+    color: rgba(255, 255, 255, 0.8);
+    font: var(--font-t2);
+  }
+.input-text {
+    background-color:rgba(15, 29, 69, 1);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    height: clamp(20px, 20px + 17 * (100vw - 320px) / 1000, 37px);
+    width: 100%;
+}
+.input-text::placeholder {
+    font: 400 clamp(12px, 12px + 8 * (100vw - 320px)/1000, 20px)/122.8% 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+}
+.input-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.input-checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font: var(--font-t3);
+    color: white;
+  }
+  .input-checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: clamp(15px, 15px + 15 * (100vw - 320px)/1000, 30px);
+    height: clamp(15px, 15px + 15 * (100vw - 320px)/1000, 30px);
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid white;
+    margin-right: clamp(17px, 17px + 5 * (100vw - 320px)/1000, 23px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  .input-checkbox:checked+label::before {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .modal__window>form>button {
+    background: none;
+  }
